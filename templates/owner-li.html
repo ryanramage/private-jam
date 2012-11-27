@@ -1,0 +1,14 @@
+<li class="owner" rel="{{owner}}">
+  <a class="user-link" href="#/user/{{uc owner}}">
+    {{#if gravatar}}
+      <img src="{{gravatar}}" />
+    {{/if}}
+    {{owner}}
+  </a>
+  {{#ifequal userCtx.name owner}}
+  {{else}}
+    {{#if remove_link}}
+      <a href="#" class="remove-link">(remove)</a>
+    {{/if}}
+  {{/ifequal}}
+</li>

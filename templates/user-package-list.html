@@ -1,0 +1,28 @@
+<table class="table">
+  <tr>
+    <th>Total Packages</th>
+    <td>{{rows.length}}</td>
+  </tr>
+  <tr>
+    <th>Last Update</th>
+    <td>{{last_update}}</td>
+  </tr>
+</table>
+
+{{#if rows}}
+<ul class="package-list">
+  {{#each rows}}
+  <li class="row-fluid">
+    <div class="span9">
+      <h4><a class="name" href="#/details/{{uc value.name}}">{{value.name}}</a></h4>
+      <div class="description">
+        {{value.description}}
+      </div>
+    </div>
+    <div class="modified span3">
+      Updated {{pp_modified}}
+    </div>
+  </li>
+  {{/each}}
+</ul>
+{{/if}}

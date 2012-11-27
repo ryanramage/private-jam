@@ -1,0 +1,19 @@
+[
+    { "description": "Access to this database" , "from": "_db" , "to"  : "../.." },
+    { "from": "_db/*" , "to"  : "../../*" },
+
+    { "from": "repo" , "to"  : "../.." },
+    { "from": "repo/*" , "to"  : "../../*" },    
+   
+    { "description": "Access to this design document" , "from": "_ddoc" , "to"  : "" },
+    { "from": "_ddoc/*" , "to"  : "*"},
+
+    { "description": "Access to this design document" , "from": "_ddoc2" , "to"  : "../jam-packages" },
+    { "from": "_ddoc2/*" , "to"  : "../jam-packages/*"},
+
+
+    { "description": "Access to the main CouchDB API", "from": "_couch" , "to"  : "../../.."},
+    { "from": "_couch/*" , "to"  : "../../../*"},
+    { "from": "/", "to": "index.html"},
+    { "from": "/*", "to": "*"}
+]

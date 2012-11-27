@@ -1,0 +1,132 @@
+<div class="container-fluid">
+  <div style="margin-top: 20px;" class="row-fluid">
+    <div class="page-main package-details span9">
+      <div class="container-fluid">
+
+        <h1>
+          <a href="#/">Packages</a>
+          <i style="font-size: 72%; color: #999; margin: 0 0.25em" class="icon-chevron-right"></i>
+          {{doc.name}}
+        </h1>
+        <p class="description">{{cfg.description}}</p>
+
+        <table class="table package-details-table">
+          <tr><th>Version</th><td>{{version}}</td></tr>
+          <tr><th>Published</th><td>{{published}}</td></tr>
+          {{#if doc.homepage}}
+          <tr>
+            <th>Homepage</th>
+            <td><a href="{{doc.homepage}}">{{doc.homepage}}</a></td>
+          </tr>
+          {{/if}}
+          {{#if github}}
+          <tr class="github">
+            <th>GitHub</th>
+            <td><a href="{{github}}">{{github}}</a></td>
+          </tr>
+          {{/if}}
+          <tr class="owners">
+            <th>Owner(s)</th>
+            <td>
+              <ul></ul>
+            </td>
+          </tr>
+          {{#if cfg.repositories}}
+          <tr>
+            <th>Repositories</th>
+            <td>
+              <ul>
+              {{#each cfg.repositories}}
+                <li><a href="{{url}}">{{url}} {{#if type}}<span class="label">{{type}}</span>{{/if}}</a></li>
+              {{/each}}
+              </ul>
+            </td>
+          </tr>
+          {{else}}
+            {{#if cfg.repository}}
+              {{#with cfg.repository}}
+              <tr>
+                <th>Repository</th>
+                <td><a href="{{url}}">{{url}} {{#if type}}<span class="label">{{type}}</span>{{/if}}</a></td>
+              </tr>
+              {{/with}}
+            {{/if}}
+          {{/if}}
+          <tr>
+            <th>Archive</th>
+            <td>
+              <a href="./repo/{{uc doc._id}}/{{uc doc.name}}-{{uc version}}.tar.gz">
+                {{uc doc.name}}-{{uc version}}.tar.gz
+              </a>
+            </td>
+          </tr>
+          {{#if cfg.licenses}}
+          <tr class="licenses">
+            <th>Licenses</th>
+            <td>
+              <ul>
+              {{#each cfg.licenses}}
+                <li><a href="{{url}}"><span class="label">{{type}}</span></a></li>
+              {{/each}}
+              </ul>
+            </td>
+          </tr>
+          {{/if}}
+          {{#if dependencyList}}
+          <tr>
+            <th>Dependencies</th>
+            <td>
+              <ul class="dependency-list">
+              {{#each dependencyList}}
+                <li><a href="#/details/{{uc this}}">{{this}}</a></li>
+              {{/each}}
+              </ul>
+            </td>
+          </tr>
+          {{/if}}
+        </table>
+
+        <div id="readme"></div>
+
+      </div>
+    </div>
+
+
+    <div class="page-sidebar span3">
+      <div class="container-fluid">
+        <h4>Versions</h4>
+        <ul class="nav nav-list">
+          {{#each versionList}}
+            <li{{#ifequal this ../version}} class="active"{{/ifequal}}>
+              <a href="#/details/{{uc ../doc/name}}/{{this}}">{{this}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal hide" id="ownersModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Manage owners</h3>
+  </div>
+  <div class="modal-body">
+    <ul class="user-list">
+    </ul>
+    <form class="form-horizontal form-add-owner">
+      <div class="control-group">
+        <div class="input-append">
+          <input type="text" id="id_add_owner" placeholder="Username" />
+          <button class="btn" type="submit">Add</button>
+          <span class="help-inline"></span>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary" data-dismiss="modal">Done</a>
+  </div>
+</div>

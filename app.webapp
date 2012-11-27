@@ -1,0 +1,27 @@
+{
+  "name": "jamjs",
+  "version" : "0.0.1",
+  "description": "A private repo for jamjs packages.",
+  "long_description" : "Store your organizations front end assets in a private repo where you want to.\\n\n\nOr have a locally cached jam repo for speed.\n\n\nOptionaly turn on replication from the main jam repo.",
+  "launch_path": "/",
+  "url": "https://github.com/ryanramage/private-jam",
+  "categories": ["jam"],
+  "flattr_user_id" : "eckoit",
+  "icons": {
+         "16": "img/promo/icon_16.png",
+         "48": "img/promo/icon_48.png",
+         "96": "img/promo/icon_96.png",
+         "128": "img/promo/icon_128.png"
+  },
+  "promo_images": {
+         "small": "img/promo/promo_small.png"
+  },
+  "screenshots": [
+     "img/promo/screenshot1.png"
+  ],
+  "developer": {
+    "name": "Ryan Ramage",
+    "url": "http://github.com/ryanramage"
+  },
+  "default_locale": "en"
+}

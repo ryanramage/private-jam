@@ -1,0 +1,12 @@
+<ol class="package-list">
+  {{#each rows}}
+    <li class="row-fluid">
+       <div class="details span7">
+         <a class="name" href="#/details/{{uc key}}">{{key}}</a>
+        </div>
+        <div class="extra span5">
+            {{value}} {{#ifequal value 1}} package {{else}} packages {{/ifequal}}
+        </div>
+    </li>
+  {{/each}}
+</ol>

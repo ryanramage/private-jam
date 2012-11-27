@@ -1,0 +1,178 @@
+body {
+    border-top: 4px solid #d73d3d;
+}
+.navbar-inner {
+    padding: 0 0 0 20px;
+}
+
+.package-list {
+    margin: 1em 0 0 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.latest-updates li {
+    margin-bottom: 1em;
+}
+
+.package-list li .user {
+    font-weight: bold;
+}
+.package-list li .action {
+    font-style: italic;
+    margin: 0 0.346em;
+}
+.package-list .version {
+    color: #999;
+}
+.package-list li .extra {
+    color: #666;
+}
+
+.package-details .description {
+    margin-bottom: 2em;
+}
+.package-details-table ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#readme .filename {
+    padding: 0.618em 1em;
+    background: #ddd;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+    top: 3px;
+}
+#readme .data {
+    border: 3px solid #ddd;
+    padding: 4em 3em;
+    width: auto;
+    margin-bottom: 2em;
+    border-radius: 3px;
+}
+#readme .data h2,
+#readme .data h3,
+#readme .data h4,
+#readme .data h5,
+#readme .data h6,
+#readme .data p,
+#readme .data pre,
+#readme .data ul,
+#readme .data ol {
+    margin-top: 1em;
+    margin-bottom: 0.618em;
+}
+
+.user-packages h1 {
+    margin-bottom: 0.618em;
+}
+
+.user-packages .package-list {
+    margin: 2em 0;
+}
+.user-packages .package-list li {
+    margin-bottom: 1em;
+}
+.user-packages .package-list .name {
+    font-weight: bold;
+}
+.user-packages .package-list .modified {
+    color: #999;
+    text-align: right;
+}
+
+.mini-profile .avatar {
+    margin-bottom: 1.618em;
+}
+
+.package-details-table .licenses ul,
+.package-details-table .licenses ul li,
+.package-details-table .owners ul,
+.package-details-table .owners ul li {
+    display: inline;
+}
+
+.package-details-table .licenses ul li:after,
+.package-details-table .owners ul li:after {
+    content: ', ';
+    margin-right: 0.364em;
+}
+.package-details-table .licenses ul li:last-child:after,
+.package-details-table .owners ul li:last-child:after {
+    content: '';
+}
+
+.package-details-table .owners ul li img {
+    margin: 0 0.346em 0 0;
+}
+.package-details-table .owners .btn {
+    margin-left: 0.618em;
+}
+
+#ownersModal .user-list {
+    margin: 1em 0;
+    padding: 0;
+    list-style-type: none;
+}
+#ownersModal .user-list li {
+    font-weight: bold;
+    margin: 0.618em 0;
+}
+#ownersModal .user-list li img {
+    margin: 0 0.346em 0 0;
+}
+#ownersModal .user-list .remove-link {
+    color: #D00;
+}
+
+#ownersModal form {
+    margin-top: 1.618em;
+}
+
+.spinnerContainer {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    margin: 0 0.346em 0 0;
+    padding: 0;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+#package-list-nav {
+    margin-bottom: 2.618em;
+}
+#package-list-nav .prev-link {
+    margin-right: 1em;
+}
+#package-list-nav .next-link {
+    margin-left: 1em;
+}
+#package-list-nav .disabled {
+    color: #999;
+    cursor: default;
+}
+#package-list-nav .disabled:hover {
+    text-decoration: none;
+}
+
+.search-results-list,
+.category-package-list {
+    margin-bottom: 2.618em;
+}
+.search-results-list li,
+.category-package-list li {
+    margin: 1.618em 0;
+}
+.search-results-list .name,
+.category-package-list .name {
+    font-weight: bold;
+}
+/*
+.search-results-list .description {
+    color: #666;
+}
+*/

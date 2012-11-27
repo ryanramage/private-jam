@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div style="margin-top: 20px;" class="row-fluid">
+    <div class="page-main user-packages span7">
+      <div class="container-fluid">
+
+        <h1>
+          <a href="#/">Packages</a>
+          <i style="font-size: 72%; color: #999; margin: 0 0.25em" class="icon-chevron-right"></i>
+          <span style="color: #999">User</span>
+          <i style="font-size: 72%; color: #999; margin: 0 0.25em" class="icon-chevron-right"></i>
+          {{profile.name}}
+        </h1>
+
+        <div id="user-packages-info">
+          <p>Loading...</p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="page-sidebar span5">
+      <div class="container-fluid">
+        <div class="mini-profile">
+          <div class="avatar">
+            <img src="{{gravatar_url}}" />
+          </div>
+          <table class="table table-striped">
+            {{#if profile.full_name}}
+            <tr>
+              <th>Full Name</th>
+              <td>{{profile.full_name}}</td>
+            </tr>
+            {{/if}}
+            {{#if profile.location}}
+            <tr>
+              <th>Location</th>
+              <td>{{profile.location}}</td>
+            </tr>
+            {{/if}}
+            {{#if pp_joined}}
+            <tr>
+              <th>Joined</th>
+              <td>{{pp_joined}}</td>
+            </tr>
+            {{/if}}
+            {{#if profile.website}}
+            <tr>
+              <th>Website</th>
+              <td><a href="{{profile.website}}">{{profile.website}}</a></td>
+            </tr>
+            {{/if}}
+            {{#if profile.twitter}}
+            <tr>
+              <th>Twitter</th>
+              <td><a href="http://twitter.com/{{uc profile.twitter}}">@{{profile.twitter}}</a></td>
+            </tr>
+            {{/if}}
+            {{#if profile.bio}}
+            <tr>
+              <th>Bio</th>
+              <td>{{profile.bio}}</td>
+            </tr>
+            {{/if}}
+          </table>
+          <a class="btn" href="/users/#/profile/{{profile._id}}">View profile</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

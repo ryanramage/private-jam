@@ -1,0 +1,10 @@
+{
+    "name": "handlebars-helpers",
+    "version": "0.0.6",
+    "description": "Useful helpers for handlebars templates. Adds support for escaping uri components, ifequal tests etc",
+    "keywords": ["templating","handlebars"],
+    "dependencies": {
+        "handlebars": null
+    },
+    "main": "handlebars-helpers.js"
+}

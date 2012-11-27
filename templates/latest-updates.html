@@ -1,0 +1,21 @@
+<ol class="package-list latest-updates">
+  {{#each rows}}
+    <li class="row-fluid">
+      <div class="span1">
+        <img src="{{gravatar_url}}" />
+      </div>
+      <div class="details span7">
+        <a class="user" href="#/user/{{uc value.user}}">
+          {{value.user}}
+        </a>
+        <span class="action">{{value.action}}</span>
+        <a class="name" href="#/details/{{uc value.name}}" title="{{value.description}}">
+          {{value.name}}
+        </a><a class="version" href="#/details/{{uc value.name}}/{{uc value.version}}">{{value.version}}</a>
+      </div>
+      <div class="extra span4">
+        {{pp_modified}}
+      </div>
+    </li>
+  {{/each}}
+</ol>
