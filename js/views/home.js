@@ -256,15 +256,9 @@ function (module, exports, require, $, _) {
             prev_search = q;
             return false;
         });
-        $('#package-search-q').keyup($.debounce(500, function () {
-            var q = $(this).val();
-            if (q !== prev_search) {
-                exports.searchPackages(q);
-            }
-            prev_search = q;
-        }));
         $('#package-search-q').focus();
     };
+
 
     exports.searchPackages = function (q, skip) {
         if (!q) {
@@ -281,12 +275,34 @@ function (module, exports, require, $, _) {
         $('#package-search-form .control-group').removeClass('error');
         $('#package-search-form .help-inline').text('');
         $('#package-search-submit').button('loading');
-        if (!/\s/.test(q)) {
-            // if only a single word add a wildcard
-            if (q.substr(q.length-1, 1) !== '*') {
-                q += '*';
-            }
+
+        var terms = q.toLowerCase().split(' ');
+        terms = _.filter(terms, function (term) {
+            return (term.length > 1);
+        });
+        var first = _.first(terms);
+        var extra_keys = _.rest(terms);
+
+        var request = {
+            key :  '"' + first + '"'         
+            
         }
+
+        var search_url = '_ddoc/_list/intersection/search';
+        couchr.get(search_url, request,
+        function (err, data) {
+            $('#package-search-submit').button('reset');
+            if (err) {
+                $('#package-search-form .help-inline').text(err.message || err);
+                $('#package-search-form .control-group').addClass('error');
+                return console.error(err);
+            }
+            $('#searchResults').html(templates['search-results.html']({
+                rows: data,
+                q: q
+            }));
+            exports.bindSearchNav(q, data);
+        });        
 
     };
 

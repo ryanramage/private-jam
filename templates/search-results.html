@@ -4,13 +4,13 @@
 
   <ol class="package-list search-results-list">
     {{#each rows}}
-      <li rel="{{doc._id}}" class="row-fluid">
+      <li rel="{{id}}" class="row-fluid">
         <div class="details span8">
-          <a class="name" href="#/details/{{uc doc.name}}">
-            {{doc.name}}
+          <a class="name" href="#/details/{{uc value.name}}">
+            {{value.name}}
           </a>
           <div class="description">
-            {{doc.description}}
+            {{value.description}}
           </div>
         </div>
         <div class="extra span4">
@@ -19,27 +19,12 @@
     {{/each}}
   </ol>
 
-  {{#with nav}}
-  <div id="package-list-nav">
-    <a href="#" class="prev-link{{#unless prev}} disabled{{/unless}}">&larr; Previous</a>
-    Showing
-    <strong>
-      <span class="start">{{start}}</span>-<span class="end">{{end}}</span>
-    </strong>
-    of
-    <strong>
-      <span class="total">{{total}}</span>
-    </strong>
-    packages
-    <a href="#" class="next-link{{#unless next}} disabled{{/unless}}">Next &rarr;</a>
-  </div>
-  {{/with}}
 
 {{else}}
 
   <p>
     No packages found. Help improve our repository, and learn
-    <a href="/docs#Publishing">how to publish a package</a>.
+    <a href="#/publish">how to publish a package</a>.
   </p>
 
 {{/if}}
